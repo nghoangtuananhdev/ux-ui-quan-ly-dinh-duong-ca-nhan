@@ -1,0 +1,981 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="2690" height="1878" viewBox="0 0 2690 1878" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap');
+      text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif; }
+    </style>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="2690" height="1878" fill="#e8ebe9"/>
+
+  <!-- ROW 1 (y = 50) -->
+  
+    <g id="Screen_01_Welcome">
+      <rect x="50" y="50" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="50" y="50" width="390" height="31" fill="#f8f7f2"/>
+    <text x="74" y="70" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="416" y="70" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+
+      <!-- Hero Art Banner -->
+      <g transform="translate(50, 81)">
+        <rect width="390" height="315" fill="#174737"/>
+        <circle cx="280" cy="115" r="75" fill="#f2b66f" opacity="0.9"/>
+        <circle cx="170" cy="170" r="90" fill="#fffdf6" stroke="#eeeae0" stroke-width="16"/>
+        <text x="170" y="195" text-anchor="middle" font-size="52">🍃</text>
+        <rect x="50" y="70" width="8" height="8" rx="2" fill="#f8dfc7" transform="rotate(45 54 74)"/>
+        <rect x="340" y="230" width="8" height="8" rx="2" fill="#f8dfc7" transform="rotate(45 344 234)"/>
+      </g>
+
+      <!-- Welcome Body -->
+      <g transform="translate(70, 425)">
+        <!-- Logo -->
+        <rect width="32" height="32" rx="10" fill="#174737"/>
+        <text x="16" y="22" text-anchor="middle" font-size="16">🌱</text>
+        <text x="42" y="22" font-family="Inter, sans-serif" font-size="18" font-weight="800" fill="#174737">NutriDaily</text>
+
+        <!-- Titles -->
+        <text x="0" y="75" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="#12372b">Hiểu bữa ăn,</text>
+        <text x="0" y="112" font-family="Inter, sans-serif" font-size="28" font-weight="800" fill="#12372b">duy trì thói quen tốt.</text>
+        <text x="0" y="150" font-family="Inter, sans-serif" font-size="14" fill="#6f7a75">Theo dõi dinh dưỡng theo cách nhẹ nhàng, đơn giản</text>
+        <text x="0" y="172" font-family="Inter, sans-serif" font-size="14" fill="#6f7a75">và phù hợp với nhịp sống của bạn.</text>
+
+        <!-- Buttons -->
+        <g transform="translate(0, 260)">
+          <!-- Start Button -->
+          <rect width="350" height="50" rx="15" fill="#174737"/>
+          <text x="175" y="31" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Bắt đầu</text>
+
+          <!-- Explore Button -->
+          <rect y="62" width="350" height="50" rx="15" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <text x="175" y="93" text-anchor="middle" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#174737">Khám phá bản mẫu</text>
+        </g>
+      </g>
+    </g>
+  
+  
+    <g id="Screen_02_Setup">
+      <rect x="490" y="50" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="490" y="50" width="390" height="31" fill="#f8f7f2"/>
+    <text x="514" y="70" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="856" y="70" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="490" y="81" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="490" y1="139" x2="880" y2="139" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <circle cx="525" cy="110" r="17" fill="none"/>
+      <text x="518" y="116" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#174737">←</text>
+    
+    <text x="685" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Thiết lập mục tiêu</text>
+    
+  
+
+      <g transform="translate(510, 155)">
+        <text x="0" y="10" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#28775a">BƯỚC 1 / 1</text>
+        <text x="0" y="40" font-family="Inter, sans-serif" font-size="23" font-weight="800" fill="#17201c">Mục tiêu của bạn là gì?</text>
+        <text x="0" y="65" font-family="Inter, sans-serif" font-size="13" fill="#6f7a75">Chọn điều bạn muốn tập trung. Có thể thay đổi bất cứ lúc nào.</text>
+
+        <!-- Option 1 (Selected) -->
+        <g transform="translate(0, 85)">
+          <rect width="350" height="60" rx="15" fill="#eff8f3" stroke="#28775a" stroke-width="1.5"/>
+          <rect x="12" y="10" width="40" height="40" rx="12" fill="#dff0e7"/>
+          <text x="32" y="35" text-anchor="middle" font-size="18">🍃</text>
+          <text x="64" y="27" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Ăn uống cân bằng</text>
+          <text x="64" y="45" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Xây dựng thói quen bền vững</text>
+          <circle cx="325" cy="30" r="10" fill="#28775a"/>
+          <text x="325" y="34" text-anchor="middle" font-size="11" fill="#ffffff">✓</text>
+        </g>
+
+        <!-- Option 2 -->
+        <g transform="translate(0, 155)">
+          <rect width="350" height="60" rx="15" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <rect x="12" y="10" width="40" height="40" rx="12" fill="#f5eee4"/>
+          <text x="32" y="35" text-anchor="middle" font-size="18">🎯</text>
+          <text x="64" y="27" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Duy trì cân nặng</text>
+          <text x="64" y="45" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Theo sát mức năng lượng mỗi ngày</text>
+        </g>
+
+        <!-- Option 3 -->
+        <g transform="translate(0, 225)">
+          <rect width="350" height="60" rx="15" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <rect x="12" y="10" width="40" height="40" rx="12" fill="#e8f3f4"/>
+          <text x="32" y="35" text-anchor="middle" font-size="18">📊</text>
+          <text x="64" y="27" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Theo dõi dinh dưỡng</text>
+          <text x="64" y="45" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Hiểu rõ hơn về bữa ăn</text>
+        </g>
+
+        <!-- Input Targets -->
+        <text x="0" y="315" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Mục tiêu mỗi ngày</text>
+        <rect x="270" y="302" width="80" height="20" rx="10" fill="#fff1e4"/>
+        <text x="310" y="316" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#ed9c52">Minh họa</text>
+
+        <!-- Input 1 -->
+        <g transform="translate(0, 330)">
+          <rect width="350" height="48" rx="13" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <text x="14" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6f7a75">Năng lượng</text>
+          <text x="290" y="29" text-anchor="end" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#17201c">2000</text>
+          <text x="335" y="29" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6f7a75">kcal</text>
+        </g>
+
+        <!-- Input 2 -->
+        <g transform="translate(0, 388)">
+          <rect width="350" height="48" rx="13" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <text x="14" y="29" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#6f7a75">Nước uống</text>
+          <text x="290" y="29" text-anchor="end" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#17201c">2000</text>
+          <text x="335" y="29" text-anchor="end" font-family="Inter, sans-serif" font-size="12" fill="#6f7a75">ml</text>
+        </g>
+
+        <!-- Action Button -->
+        <g transform="translate(0, 520)">
+          <rect width="350" height="50" rx="15" fill="#174737"/>
+          <text x="175" y="31" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Lưu và tiếp tục</text>
+          <text x="175" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="600" fill="#1d5c45">Bỏ qua, dùng mục tiêu mẫu</text>
+        </g>
+      </g>
+    </g>
+  
+  
+    <g id="Screen_03_Today">
+      <rect x="930" y="50" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="930" y="50" width="390" height="31" fill="#f8f7f2"/>
+    <text x="954" y="70" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="1296" y="70" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="930" y="81" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="930" y1="139" x2="1320" y2="139" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <rect x="948" y="96" width="28" height="28" rx="9" fill="#174737"/>
+      <text x="962" y="115" text-anchor="middle" font-size="14">🌱</text>
+      <text x="982" y="116" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#174737">NutriDaily</text>
+    
+    <text x="1125" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Hôm nay</text>
+    
+      <circle cx="1284" cy="110" r="18" fill="#dff0e7"/>
+      <text x="1284" y="114" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="800" fill="#174737">AN</text>
+    
+  
+
+      <g transform="translate(948, 150)">
+        <text x="0" y="10" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#28775a">THỨ NĂM, 19 THÁNG 6</text>
+        <text x="0" y="36" font-family="Inter, sans-serif" font-size="24" font-weight="800" fill="#17201c">Chào buổi sáng, An</text>
+        <text x="0" y="56" font-family="Inter, sans-serif" font-size="13" fill="#6f7a75">Một chút đều đặn mỗi ngày là đủ.</text>
+
+        <!-- Energy Card -->
+        <g transform="translate(0, 70)">
+          <rect width="354" height="175" rx="20" fill="#174737"/>
+          <text x="18" y="28" font-family="Inter, sans-serif" font-size="11" fill="#dff0e7">Năng lượng đã ghi</text>
+          <text x="18" y="46" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Còn 1.357 kcal</text>
+          <text x="336" y="35" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#dff0e7">Xem chi tiết ›</text>
+
+          <!-- Circular Ring -->
+          <circle cx="75" cy="112" r="48" fill="#1d5c45" stroke="#ed9c52" stroke-width="9"/>
+          <text x="75" y="108" text-anchor="middle" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#ffffff">643</text>
+          <text x="75" y="125" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#dff0e7">/ 2.000 kcal</text>
+
+          <!-- Macros -->
+          <g transform="translate(160, 75)">
+            <!-- Protein -->
+            <circle cx="8" cy="12" r="4" fill="#efb16d"/>
+            <text x="20" y="16" font-family="Inter, sans-serif" font-size="11" fill="#ffffff">Chất đạm</text>
+            <text x="170" y="16" text-anchor="end" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">51 g</text>
+
+            <!-- Carbs -->
+            <circle cx="8" cy="38" r="4" fill="#93c2a6"/>
+            <text x="20" y="42" font-family="Inter, sans-serif" font-size="11" fill="#ffffff">Tinh bột</text>
+            <text x="170" y="42" text-anchor="end" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">86 g</text>
+
+            <!-- Fat -->
+            <circle cx="8" cy="64" r="4" fill="#d7d08d"/>
+            <text x="20" y="68" font-family="Inter, sans-serif" font-size="11" fill="#ffffff">Chất béo</text>
+            <text x="170" y="68" text-anchor="end" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">24 g</text>
+          </g>
+        </g>
+
+        <!-- Meals Section Header -->
+        <g transform="translate(0, 265)">
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="15" font-weight="700" fill="#17201c">Bữa ăn hôm nay</text>
+          <text x="0" y="32" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">4 món đã ghi</text>
+          <rect x="254" y="2" width="100" height="32" rx="10" fill="#dff0e7"/>
+          <text x="304" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#174737">+ Thêm món</text>
+        </g>
+
+        <!-- Meal Rows -->
+        <g transform="translate(0, 310)">
+          <rect width="354" height="170" rx="18" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          
+          <!-- Sáng -->
+          <rect x="12" y="8" width="28" height="28" rx="8" fill="#f5eee4"/>
+          <text x="26" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#8b603b">S</text>
+          <text x="48" y="20" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Sáng</text>
+          <text x="48" y="32" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">Bánh mì trứng</text>
+          <text x="320" y="26" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">343 kcal ›</text>
+          <line x1="12" y1="42" x2="342" y2="42" stroke="#e5e9e6" stroke-width="1"/>
+
+          <!-- Trưa -->
+          <rect x="12" y="50" width="28" height="28" rx="8" fill="#f5eee4"/>
+          <text x="26" y="68" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#8b603b">Tr</text>
+          <text x="48" y="62" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Trưa</text>
+          <text x="48" y="74" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">Ức gà áp chảo, Rau luộc</text>
+          <text x="320" y="68" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">200 kcal ›</text>
+          <line x1="12" y1="84" x2="342" y2="84" stroke="#e5e9e6" stroke-width="1"/>
+
+          <!-- Tối -->
+          <rect x="12" y="92" width="28" height="28" rx="8" fill="#f5eee4"/>
+          <text x="26" y="110" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#8b603b">T</text>
+          <text x="48" y="104" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Tối</text>
+          <text x="48" y="116" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">Chưa ghi món</text>
+          <text x="320" y="110" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">0 kcal ›</text>
+          <line x1="12" y1="126" x2="342" y2="126" stroke="#e5e9e6" stroke-width="1"/>
+
+          <!-- Phụ -->
+          <rect x="12" y="134" width="28" height="28" rx="8" fill="#f5eee4"/>
+          <text x="26" y="152" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="800" fill="#8b603b">P</text>
+          <text x="48" y="146" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Bữa phụ</text>
+          <text x="48" y="158" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">Sữa chua</text>
+          <text x="320" y="152" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">100 kcal ›</text>
+        </g>
+
+        <!-- Water Card -->
+        <g transform="translate(0, 495)">
+          <rect width="354" height="66" rx="17" fill="#e8f3f4"/>
+          <rect x="12" y="13" width="40" height="40" rx="12" fill="#c8e4e6"/>
+          <text x="32" y="38" text-anchor="middle" font-size="18">💧</text>
+          <text x="64" y="28" font-family="Inter, sans-serif" font-size="10" fill="#4c6b6d">Nước hôm nay</text>
+          <text x="64" y="46" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">1.250 <tspan font-weight="500" font-size="10" fill="#6f7a75">/ 2.000 ml</tspan></text>
+          <rect x="270" y="16" width="70" height="34" rx="10" fill="#ffffff"/>
+          <text x="305" y="37" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#236d73">+250 ml</text>
+        </g>
+
+        <!-- Planner Link -->
+        <g transform="translate(0, 575)">
+          <text x="8" y="24" font-size="14">📅</text>
+          <text x="32" y="24" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#1d5c45">Xem thực đơn hôm nay</text>
+          <text x="344" y="24" text-anchor="end" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#1d5c45">›</text>
+        </g>
+      </g>
+
+      
+    <!-- Bottom Nav -->
+    <rect x="930" y="817" width="390" height="77" fill="#ffffff"/>
+    <line x1="930" y1="817" x2="1320" y2="817" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <text x="969" y="849" text-anchor="middle" font-size="18" fill="#1d5c45">⌂</text>
+      <text x="969" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1d5c45">Hôm nay</text>
+    
+      <text x="1047" y="849" text-anchor="middle" font-size="18" fill="#6f7a75">📖</text>
+      <text x="1047" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Nhật ký</text>
+    
+      <text x="1125" y="849" text-anchor="middle" font-size="18" fill="#6f7a75">📅</text>
+      <text x="1125" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Thực đơn</text>
+    
+      <text x="1203" y="849" text-anchor="middle" font-size="18" fill="#6f7a75">📊</text>
+      <text x="1203" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Tiến độ</text>
+    
+      <text x="1281" y="849" text-anchor="middle" font-size="18" fill="#6f7a75">👤</text>
+      <text x="1281" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Cá nhân</text>
+    
+  
+    </g>
+  
+  
+    <g id="Screen_04_Diary">
+      <rect x="1370" y="50" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="1370" y="50" width="390" height="31" fill="#f8f7f2"/>
+    <text x="1394" y="70" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="1736" y="70" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="1370" y="81" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="1370" y1="139" x2="1760" y2="139" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <rect x="1388" y="96" width="28" height="28" rx="9" fill="#174737"/>
+      <text x="1402" y="115" text-anchor="middle" font-size="14">🌱</text>
+      <text x="1422" y="116" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#174737">NutriDaily</text>
+    
+    <text x="1565" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Nhật ký ăn uống</text>
+    
+      <circle cx="1724" cy="110" r="17" fill="#dff0e7"/>
+      <text x="1724" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#174737">+</text>
+    
+  
+
+      <g transform="translate(1388, 150)">
+        <!-- Date Bar -->
+        <rect width="354" height="42" rx="14" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+        <text x="20" y="26" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#6f7a75">‹</text>
+        <text x="177" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Hôm nay</text>
+        <text x="177" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">Thứ Năm, 19/06</text>
+        <text x="334" y="26" text-anchor="end" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#6f7a75">›</text>
+
+        <!-- Summary -->
+        <g transform="translate(0, 52)">
+          <rect width="354" height="64" rx="17" fill="#174737"/>
+          <text x="45" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#dff0e7">Tổng năng lượng</text>
+          <text x="45" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#ffffff">643 kcal</text>
+          <line x1="177" y1="14" x2="177" y2="50" stroke="#ffffff" stroke-opacity="0.2"/>
+          <text x="265" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" fill="#dff0e7">Mục tiêu</text>
+          <text x="265" y="48" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#ffffff">2.000 kcal</text>
+        </g>
+
+        <!-- Sáng -->
+        <g transform="translate(0, 130)">
+          <text x="0" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17201c">Sáng</text>
+          <text x="354" y="16" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">343 kcal</text>
+          <g transform="translate(0, 24)">
+            <rect width="354" height="48" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <rect x="8" y="9" width="30" height="30" rx="8" fill="#dff0e7"/>
+            <text x="23" y="28" text-anchor="middle" font-size="14">🍃</text>
+            <text x="48" y="24" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Bánh mì trứng</text>
+            <text x="48" y="38" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">1 phần</text>
+            <text x="340" y="30" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">343 kcal ›</text>
+          </g>
+        </g>
+
+        <!-- Trưa -->
+        <g transform="translate(0, 218)">
+          <text x="0" y="16" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17201c">Trưa</text>
+          <text x="354" y="16" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">200 kcal</text>
+          <!-- Item 1 -->
+          <g transform="translate(0, 24)">
+            <rect width="354" height="48" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <rect x="8" y="9" width="30" height="30" rx="8" fill="#dff0e7"/>
+            <text x="23" y="28" text-anchor="middle" font-size="14">🍗</text>
+            <text x="48" y="24" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Ức gà áp chảo</text>
+            <text x="48" y="38" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">100 g</text>
+            <text x="340" y="30" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">165 kcal ›</text>
+          </g>
+          <!-- Item 2 -->
+          <g transform="translate(0, 78)">
+            <rect width="354" height="48" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <rect x="8" y="9" width="30" height="30" rx="8" fill="#dff0e7"/>
+            <text x="23" y="28" text-anchor="middle" font-size="14">🥦</text>
+            <text x="48" y="24" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Rau luộc</text>
+            <text x="48" y="38" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">100 g</text>
+            <text x="340" y="30" text-anchor="end" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">35 kcal ›</text>
+          </g>
+        </g>
+
+        <!-- Button Add Meal -->
+        <g transform="translate(0, 500)">
+          <rect width="354" height="50" rx="15" fill="#174737"/>
+          <text x="177" y="31" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff">+ Thêm món</text>
+        </g>
+      </g>
+
+      
+    <!-- Bottom Nav -->
+    <rect x="1370" y="817" width="390" height="77" fill="#ffffff"/>
+    <line x1="1370" y1="817" x2="1760" y2="817" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <text x="1409" y="849" text-anchor="middle" font-size="18" fill="#6f7a75">⌂</text>
+      <text x="1409" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Hôm nay</text>
+    
+      <text x="1487" y="849" text-anchor="middle" font-size="18" fill="#1d5c45">📖</text>
+      <text x="1487" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1d5c45">Nhật ký</text>
+    
+      <text x="1565" y="849" text-anchor="middle" font-size="18" fill="#6f7a75">📅</text>
+      <text x="1565" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Thực đơn</text>
+    
+      <text x="1643" y="849" text-anchor="middle" font-size="18" fill="#6f7a75">📊</text>
+      <text x="1643" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Tiến độ</text>
+    
+      <text x="1721" y="849" text-anchor="middle" font-size="18" fill="#6f7a75">👤</text>
+      <text x="1721" y="867" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Cá nhân</text>
+    
+  
+    </g>
+  
+  
+    <g id="Screen_05_Search">
+      <rect x="1810" y="50" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="1810" y="50" width="390" height="31" fill="#f8f7f2"/>
+    <text x="1834" y="70" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="2176" y="70" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="1810" y="81" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="1810" y1="139" x2="2200" y2="139" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <circle cx="1845" cy="110" r="17" fill="none"/>
+      <text x="1838" y="116" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#174737">←</text>
+    
+    <text x="2005" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Thêm món ăn</text>
+    
+  
+
+      <g transform="translate(1828, 150)">
+        <!-- Search bar -->
+        <rect width="354" height="48" rx="14" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+        <text x="16" y="30" font-size="16">🔍</text>
+        <text x="44" y="30" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Cơm trắng</text>
+        <text x="334" y="30" text-anchor="end" font-size="14" fill="#6f7a75">✕</text>
+
+        <!-- Filter Chips -->
+        <g transform="translate(0, 60)">
+          <!-- All -->
+          <rect width="70" height="34" rx="17" fill="#174737"/>
+          <text x="35" y="21" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#ffffff">Tất cả</text>
+          <!-- Recent -->
+          <rect x="78" width="76" height="34" rx="17" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <text x="116" y="21" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#17201c">Gần đây</text>
+          <!-- Popular -->
+          <rect x="162" width="76" height="34" rx="17" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <text x="200" y="21" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" fill="#17201c">Phổ biến</text>
+        </g>
+
+        <!-- Title -->
+        <text x="0" y="118" font-family="Inter, sans-serif" font-size="14" font-weight="800" fill="#17201c">Gợi ý cho bạn</text>
+        <text x="354" y="118" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">8 món</text>
+
+        <!-- Results -->
+        <g transform="translate(0, 130)">
+          <rect width="354" height="420" rx="18" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+
+          <!-- Item 1: Cơm trắng -->
+          <rect x="10" y="10" width="38" height="38" rx="10" fill="#dceacb"/>
+          <text x="29" y="34" text-anchor="middle" font-size="16">🍚</text>
+          <text x="56" y="26" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Cơm trắng</text>
+          <text x="56" y="40" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">100 g · 130 kcal</text>
+          <rect x="260" y="18" width="56" height="22" rx="7" fill="#eff8f3"/>
+          <text x="288" y="33" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#28775a">Gần đây</text>
+          <text x="338" y="34" text-anchor="end" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6f7a75">›</text>
+          <line x1="10" y1="58" x2="344" y2="58" stroke="#e5e9e6" stroke-width="1"/>
+
+          <!-- Item 2: Phở bò -->
+          <rect x="10" y="68" width="38" height="38" rx="10" fill="#f3dcc1"/>
+          <text x="29" y="92" text-anchor="middle" font-size="16">🍜</text>
+          <text x="56" y="84" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Phở bò</text>
+          <text x="56" y="98" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">1 tô · 350 kcal</text>
+          <rect x="256" y="76" width="60" height="22" rx="7" fill="#eff8f3"/>
+          <text x="286" y="91" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#28775a">Phổ biến</text>
+          <text x="338" y="92" text-anchor="end" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6f7a75">›</text>
+          <line x1="10" y1="116" x2="344" y2="116" stroke="#e5e9e6" stroke-width="1"/>
+
+          <!-- Item 3: Bánh mì -->
+          <rect x="10" y="126" width="38" height="38" rx="10" fill="#ead7ba"/>
+          <text x="29" y="150" text-anchor="middle" font-size="16">🥖</text>
+          <text x="56" y="142" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Bánh mì</text>
+          <text x="56" y="156" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">1 ổ · 265 kcal</text>
+          <rect x="256" y="134" width="60" height="22" rx="7" fill="#eff8f3"/>
+          <text x="286" y="149" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#28775a">Phổ biến</text>
+          <text x="338" y="150" text-anchor="end" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6f7a75">›</text>
+          <line x1="10" y1="174" x2="344" y2="174" stroke="#e5e9e6" stroke-width="1"/>
+
+          <!-- Item 4: Ức gà áp chảo -->
+          <rect x="10" y="184" width="38" height="38" rx="10" fill="#d3e5d8"/>
+          <text x="29" y="208" text-anchor="middle" font-size="16">🍗</text>
+          <text x="56" y="200" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Ức gà áp chảo</text>
+          <text x="56" y="214" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">100 g · 165 kcal</text>
+          <rect x="260" y="192" width="56" height="22" rx="7" fill="#eff8f3"/>
+          <text x="288" y="207" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#28775a">Gần đây</text>
+          <text x="338" y="208" text-anchor="end" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#6f7a75">›</text>
+        </g>
+      </g>
+    </g>
+  
+  
+    <g id="Screen_06_FoodDetail">
+      <rect x="2250" y="50" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="2250" y="50" width="390" height="31" fill="#f8f7f2"/>
+    <text x="2274" y="70" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="2616" y="70" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="2250" y="81" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="2250" y1="139" x2="2640" y2="139" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <circle cx="2285" cy="110" r="17" fill="none"/>
+      <text x="2278" y="116" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#174737">←</text>
+    
+    <text x="2445" y="116" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Chi tiết món</text>
+    
+      <circle cx="2604" cy="110" r="17" fill="#f5eee4"/>
+      <text x="2604" y="116" text-anchor="middle" font-size="14">🗑</text>
+    
+  
+
+      <g transform="translate(2268, 150)">
+        <!-- Hero Box -->
+        <rect width="354" height="130" rx="20" fill="#dff0e7"/>
+        <circle cx="177" cy="65" r="38" fill="#ffffff"/>
+        <text x="177" y="75" text-anchor="middle" font-size="34">🍚</text>
+
+        <!-- Title -->
+        <g transform="translate(0, 145)">
+          <text x="0" y="20" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#17201c">Cơm trắng</text>
+          <text x="0" y="36" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Khẩu phần chuẩn: 100 g</text>
+          <text x="354" y="24" text-anchor="end" font-family="Inter, sans-serif" font-size="22" font-weight="800" fill="#1d5c45">195 <tspan font-size="12">kcal</tspan></text>
+        </g>
+
+        <!-- Macro 3 Cols -->
+        <g transform="translate(0, 195)">
+          <rect width="354" height="52" rx="14" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <!-- Col 1 -->
+          <text x="59" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">Đạm</text>
+          <text x="59" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">4.1 g</text>
+          <line x1="118" y1="12" x2="118" y2="40" stroke="#e5e9e6"/>
+          <!-- Col 2 -->
+          <text x="177" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">Tinh bột</text>
+          <text x="177" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">42.0 g</text>
+          <line x1="236" y1="12" x2="236" y2="40" stroke="#e5e9e6"/>
+          <!-- Col 3 -->
+          <text x="295" y="22" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">Chất béo</text>
+          <text x="295" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">0.5 g</text>
+        </g>
+
+        <!-- Stepper -->
+        <g transform="translate(0, 265)">
+          <text x="0" y="14" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Khẩu phần</text>
+          <g transform="translate(0, 22)">
+            <rect width="354" height="54" rx="15" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <!-- Minus -->
+            <rect x="4" y="4" width="46" height="46" rx="12" fill="#eff8f3"/>
+            <text x="27" y="33" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#1d5c45">−</text>
+            <!-- Value -->
+            <text x="165" y="34" text-anchor="end" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#17201c">150</text>
+            <text x="175" y="34" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">gram</text>
+            <!-- Plus -->
+            <rect x="304" y="4" width="46" height="46" rx="12" fill="#eff8f3"/>
+            <text x="327" y="33" text-anchor="middle" font-family="Inter, sans-serif" font-size="22" font-weight="700" fill="#1d5c45">+</text>
+          </g>
+        </g>
+
+        <!-- Buttons -->
+        <g transform="translate(0, 480)">
+          <rect width="354" height="50" rx="15" fill="#174737"/>
+          <text x="177" y="31" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Thêm vào bữa trưa · 195 kcal</text>
+          <text x="177" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#174737">Hủy</text>
+        </g>
+      </g>
+    </g>
+  
+
+  <!-- ROW 2 (y = 964) -->
+  
+    <g id="Screen_07_DeleteModal">
+      <!-- Underlying dimmed screen -->
+      <rect x="50" y="964" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="50" y="964" width="390" height="31" fill="#f8f7f2"/>
+    <text x="74" y="984" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="416" y="984" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+
+      <!-- Dark backdrop overlay -->
+      <rect x="50" y="964" width="390" height="844" rx="42" fill="#0a1813" fill-opacity="0.65"/>
+
+      <!-- Modal Bottom Sheet -->
+      <g transform="translate(66, 1528)">
+        <rect width="358" height="256" rx="24" fill="#ffffff"/>
+        <!-- Danger circle icon -->
+        <circle cx="179" cy="45" r="26" fill="#f7e2e0"/>
+        <text x="179" y="52" text-anchor="middle" font-size="20">🗑</text>
+
+        <text x="179" y="96" text-anchor="middle" font-family="Inter, sans-serif" font-size="18" font-weight="800" fill="#17201c">Xóa món đã ghi?</text>
+        <text x="179" y="122" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#6f7a75">Cơm trắng sẽ bị xóa khỏi nhật ký</text>
+        <text x="179" y="138" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" fill="#6f7a75">và tổng năng lượng hôm nay.</text>
+
+        <!-- Danger Button -->
+        <g transform="translate(20, 150)">
+          <rect width="318" height="46" rx="14" fill="#bd4f46"/>
+          <text x="159" y="28" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Xóa món</text>
+        </g>
+
+        <!-- Keep Button -->
+        <g transform="translate(20, 204)">
+          <rect width="318" height="42" rx="14" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <text x="159" y="26" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#174737">Giữ lại</text>
+        </g>
+      </g>
+    </g>
+  
+  
+    <g id="Screen_08_Planner">
+      <rect x="490" y="964" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="490" y="964" width="390" height="31" fill="#f8f7f2"/>
+    <text x="514" y="984" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="856" y="984" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="490" y="995" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="490" y1="1053" x2="880" y2="1053" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <rect x="508" y="1010" width="28" height="28" rx="9" fill="#174737"/>
+      <text x="522" y="1029" text-anchor="middle" font-size="14">🌱</text>
+      <text x="542" y="1030" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#174737">NutriDaily</text>
+    
+    <text x="685" y="1030" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Thực đơn</text>
+    
+  
+
+      <g transform="translate(508, 1064)">
+        <!-- Week Strip -->
+        <g>
+          
+              <rect x="0" width="46" height="54" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+              <text x="23" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T2</text>
+              <text x="23" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">16</text>
+            
+              <rect x="51" width="46" height="54" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+              <text x="74" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T3</text>
+              <text x="74" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">17</text>
+            
+              <rect x="102" width="46" height="54" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+              <text x="125" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T4</text>
+              <text x="125" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">18</text>
+            
+              <rect x="153" width="46" height="54" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+              <text x="176" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T5</text>
+              <text x="176" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">19</text>
+            
+              <rect x="204" width="46" height="54" rx="12" fill="#174737" />
+              <text x="227" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#dff0e7">T6</text>
+              <text x="227" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#ffffff">20</text>
+            
+              <rect x="255" width="46" height="54" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+              <text x="278" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T7</text>
+              <text x="278" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">21</text>
+            
+              <rect x="306" width="46" height="54" rx="12" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+              <text x="329" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">CN</text>
+              <text x="329" y="38" text-anchor="middle" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">22</text>
+            
+        </g>
+
+        <!-- Intro -->
+        <g transform="translate(0, 72)">
+          <text x="0" y="10" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#28775a">THỨ SÁU, 20/06</text>
+          <text x="0" y="32" font-family="Inter, sans-serif" font-size="20" font-weight="800" fill="#17201c">Kế hoạch ngày mai</text>
+          <text x="354" y="24" text-anchor="end" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">Dự kiến 1.820 kcal</text>
+        </g>
+
+        <!-- Plan Cards -->
+        <g transform="translate(0, 120)">
+          <!-- Card 1: Sáng -->
+          <g>
+            <rect width="354" height="66" rx="15" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <text x="14" y="24" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">Bữa sáng</text>
+            <text x="340" y="24" text-anchor="end" font-family="Inter, sans-serif" font-size="9" fill="#28775a">Đã lên kế hoạch</text>
+            <text x="14" y="48" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Yến mạch chuối</text>
+            <text x="340" y="48" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">410 kcal</text>
+          </g>
+
+          <!-- Card 2: Trưa (With Swap button) -->
+          <g transform="translate(0, 78)">
+            <rect width="354" height="106" rx="15" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <text x="14" y="24" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">Bữa trưa</text>
+            <text x="340" y="24" text-anchor="end" font-family="Inter, sans-serif" font-size="9" fill="#28775a">Đã lên kế hoạch</text>
+            <text x="14" y="48" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Cơm gà rau củ</text>
+            <text x="340" y="48" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">560 kcal</text>
+            <!-- Swap Button -->
+            <rect x="14" y="62" width="326" height="32" rx="8" fill="#eff8f3"/>
+            <text x="177" y="82" text-anchor="middle" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#1d5c45">🔄 Đổi món bữa trưa</text>
+          </g>
+
+          <!-- Card 3: Tối -->
+          <g transform="translate(0, 196)">
+            <rect width="354" height="66" rx="15" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <text x="14" y="24" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">Bữa tối</text>
+            <text x="340" y="24" text-anchor="end" font-family="Inter, sans-serif" font-size="9" fill="#28775a">Đã lên kế hoạch</text>
+            <text x="14" y="48" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">Cá hấp và rau củ</text>
+            <text x="340" y="48" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">530 kcal</text>
+          </g>
+        </g>
+      </g>
+
+      
+    <!-- Bottom Nav -->
+    <rect x="490" y="1731" width="390" height="77" fill="#ffffff"/>
+    <line x1="490" y1="1731" x2="880" y2="1731" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <text x="529" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">⌂</text>
+      <text x="529" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Hôm nay</text>
+    
+      <text x="607" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">📖</text>
+      <text x="607" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Nhật ký</text>
+    
+      <text x="685" y="1763" text-anchor="middle" font-size="18" fill="#1d5c45">📅</text>
+      <text x="685" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1d5c45">Thực đơn</text>
+    
+      <text x="763" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">📊</text>
+      <text x="763" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Tiến độ</text>
+    
+      <text x="841" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">👤</text>
+      <text x="841" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Cá nhân</text>
+    
+  
+    </g>
+  
+  
+    <g id="Screen_09_Swap">
+      <rect x="930" y="964" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="930" y="964" width="390" height="31" fill="#f8f7f2"/>
+    <text x="954" y="984" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="1296" y="984" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="930" y="995" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="930" y1="1053" x2="1320" y2="1053" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <circle cx="965" cy="1024" r="17" fill="none"/>
+      <text x="958" y="1030" font-family="Inter, sans-serif" font-size="18" font-weight="700" fill="#174737">←</text>
+    
+    <text x="1125" y="1030" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Đổi món bữa trưa</text>
+    
+  
+
+      <g transform="translate(948, 1064)">
+        <!-- Current Dish -->
+        <rect width="354" height="64" rx="14" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+        <text x="14" y="24" font-family="Inter, sans-serif" font-size="9" font-weight="800" fill="#6f7a75">MÓN HIỆN TẠI</text>
+        <text x="14" y="46" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Cơm gà rau củ · 560 kcal</text>
+
+        <!-- Swap List Title -->
+        <text x="0" y="98" font-family="Inter, sans-serif" font-size="13" font-weight="800" fill="#17201c">Chọn món thay thế</text>
+
+        <!-- Items -->
+        <g transform="translate(0, 112)">
+          <!-- Option 1 (Selected) -->
+          <rect width="354" height="54" rx="14" fill="#eff8f3" stroke="#28775a" stroke-width="1.5"/>
+          <text x="14" y="24" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Bún thịt nướng</text>
+          <text x="14" y="40" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">1 tô · 520 kcal</text>
+          <circle cx="325" cy="27" r="10" fill="#28775a"/>
+          <text x="325" y="31" text-anchor="middle" font-size="11" fill="#ffffff">✓</text>
+
+          <!-- Option 2 -->
+          <g transform="translate(0, 64)">
+            <rect width="354" height="54" rx="14" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <text x="14" y="24" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Cơm cá kho</text>
+            <text x="14" y="40" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">1 phần · 540 kcal</text>
+          </g>
+
+          <!-- Option 3 -->
+          <g transform="translate(0, 128)">
+            <rect width="354" height="54" rx="14" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            <text x="14" y="24" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Phở bò</text>
+            <text x="14" y="40" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">1 tô · 350 kcal</text>
+          </g>
+        </g>
+
+        <!-- Buttons -->
+        <g transform="translate(0, 480)">
+          <rect width="354" height="50" rx="15" fill="#174737"/>
+          <text x="177" y="31" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#ffffff">Xác nhận đổi món</text>
+          <text x="177" y="80" text-anchor="middle" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#174737">Hủy</text>
+        </g>
+      </g>
+    </g>
+  
+  
+    <g id="Screen_10_Progress">
+      <rect x="1370" y="964" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="1370" y="964" width="390" height="31" fill="#f8f7f2"/>
+    <text x="1394" y="984" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="1736" y="984" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="1370" y="995" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="1370" y1="1053" x2="1760" y2="1053" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <rect x="1388" y="1010" width="28" height="28" rx="9" fill="#174737"/>
+      <text x="1402" y="1029" text-anchor="middle" font-size="14">🌱</text>
+      <text x="1422" y="1030" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#174737">NutriDaily</text>
+    
+    <text x="1565" y="1030" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Tiến độ</text>
+    
+  
+
+      <g transform="translate(1388, 1064)">
+        <!-- Chart Card -->
+        <rect width="354" height="210" rx="18" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+        <text x="16" y="26" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">Năng lượng đã ghi</text>
+        <text x="16" y="44" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Trung bình 1.625 kcal</text>
+        <text x="338" y="35" text-anchor="end" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">kcal</text>
+
+        <!-- Bars -->
+        <g transform="translate(16, 60)">
+          
+              <rect x="10" y="30" width="14" height="70" rx="4" fill="#a6c9b3"/>
+              <text x="17" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T2</text>
+            
+              <rect x="56" y="12" width="14" height="88" rx="4" fill="#a6c9b3"/>
+              <text x="63" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T3</text>
+            
+              <rect x="102" y="90" width="14" height="10" rx="4" fill="#a6c9b3"/>
+              <text x="109" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T4</text>
+            
+              <rect x="148" y="20" width="18" height="80" rx="4" fill="#28775a"/>
+              <text x="155" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T5</text>
+            
+              <rect x="194" y="24" width="14" height="76" rx="4" fill="#a6c9b3"/>
+              <text x="201" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T6</text>
+            
+              <rect x="240" y="90" width="14" height="10" rx="4" fill="#a6c9b3"/>
+              <text x="247" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">T7</text>
+            
+              <rect x="286" y="90" width="14" height="10" rx="4" fill="#a6c9b3"/>
+              <text x="293" y="118" text-anchor="middle" font-family="Inter, sans-serif" font-size="9" fill="#6f7a75">CN</text>
+            
+        </g>
+        <text x="16" y="196" font-family="Inter, sans-serif" font-size="10" fill="#6f7a75">Bạn đã ghi nhật ký 4/7 ngày trong tuần.</text>
+
+        <!-- Stats List -->
+        <g transform="translate(0, 230)">
+          <text x="0" y="18" font-family="Inter, sans-serif" font-size="14" font-weight="700" fill="#17201c">Chi tiết Thứ Năm</text>
+          <g transform="translate(0, 30)">
+            <rect width="354" height="110" rx="16" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+            
+            <text x="14" y="24" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Năng lượng hôm nay</text>
+            <text x="340" y="24" text-anchor="end" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">643 kcal</text>
+            <line x1="14" y1="36" x2="340" y2="36" stroke="#e5e9e6"/>
+
+            <text x="14" y="60" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Nước uống hôm nay</text>
+            <text x="340" y="60" text-anchor="end" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">1.250 ml</text>
+            <line x1="14" y1="72" x2="340" y2="72" stroke="#e5e9e6"/>
+
+            <text x="14" y="96" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Món đã ghi</text>
+            <text x="340" y="96" text-anchor="end" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">4 món</text>
+          </g>
+        </g>
+      </g>
+
+      
+    <!-- Bottom Nav -->
+    <rect x="1370" y="1731" width="390" height="77" fill="#ffffff"/>
+    <line x1="1370" y1="1731" x2="1760" y2="1731" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <text x="1409" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">⌂</text>
+      <text x="1409" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Hôm nay</text>
+    
+      <text x="1487" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">📖</text>
+      <text x="1487" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Nhật ký</text>
+    
+      <text x="1565" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">📅</text>
+      <text x="1565" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Thực đơn</text>
+    
+      <text x="1643" y="1763" text-anchor="middle" font-size="18" fill="#1d5c45">📊</text>
+      <text x="1643" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1d5c45">Tiến độ</text>
+    
+      <text x="1721" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">👤</text>
+      <text x="1721" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Cá nhân</text>
+    
+  
+    </g>
+  
+  
+    <g id="Screen_11_Profile">
+      <rect x="1810" y="964" width="390" height="844" rx="42" fill="#f8f7f2" stroke="#12372b" stroke-width="7"/>
+      
+    <!-- Status Bar -->
+    <rect x="1810" y="964" width="390" height="31" fill="#f8f7f2"/>
+    <text x="1834" y="984" font-family="Inter, sans-serif" font-size="11" font-weight="700" fill="#17201c">9:41</text>
+    <text x="2176" y="984" text-anchor="end" font-family="Inter, sans-serif" font-size="9" font-weight="700" fill="#17201c">● ◒ 100%</text>
+  
+      
+    <!-- Header -->
+    <rect x="1810" y="995" width="390" height="58" fill="#f8f7f2"/>
+    <line x1="1810" y1="1053" x2="2200" y2="1053" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <rect x="1828" y="1010" width="28" height="28" rx="9" fill="#174737"/>
+      <text x="1842" y="1029" text-anchor="middle" font-size="14">🌱</text>
+      <text x="1862" y="1030" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#174737">NutriDaily</text>
+    
+    <text x="2005" y="1030" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="700" fill="#17201c">Cá nhân</text>
+    
+  
+
+      <g transform="translate(1828, 1064)">
+        <!-- Avatar & Name -->
+        <circle cx="28" cy="28" r="28" fill="#dff0e7"/>
+        <text x="28" y="34" text-anchor="middle" font-family="Inter, sans-serif" font-size="16" font-weight="800" fill="#174737">AN</text>
+        <text x="70" y="24" font-family="Inter, sans-serif" font-size="18" font-weight="800" fill="#17201c">An Nguyễn</text>
+        <text x="70" y="42" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Tài khoản dùng thử</text>
+
+        <!-- Goal settings -->
+        <g transform="translate(0, 75)">
+          <rect width="354" height="175" rx="18" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          <text x="14" y="26" font-family="Inter, sans-serif" font-size="13" font-weight="700" fill="#17201c">Mục tiêu mỗi ngày</text>
+
+          <!-- Row 1 -->
+          <rect x="14" y="40" width="326" height="40" rx="10" fill="#f8f7f2"/>
+          <text x="28" y="65" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Năng lượng</text>
+          <text x="326" y="65" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">2.000 kcal</text>
+
+          <!-- Row 2 -->
+          <rect x="14" y="88" width="326" height="40" rx="10" fill="#f8f7f2"/>
+          <text x="28" y="113" font-family="Inter, sans-serif" font-size="11" fill="#6f7a75">Nước uống</text>
+          <text x="326" y="113" text-anchor="end" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#17201c">2.000 ml</text>
+
+          <!-- Button -->
+          <rect x="14" y="136" width="326" height="32" rx="8" fill="#174737"/>
+          <text x="177" y="157" text-anchor="middle" font-family="Inter, sans-serif" font-size="12" font-weight="700" fill="#ffffff">Lưu thay đổi</text>
+        </g>
+
+        <!-- Settings List -->
+        <g transform="translate(0, 270)">
+          <rect width="354" height="88" rx="14" fill="#ffffff" stroke="#e5e9e6" stroke-width="1"/>
+          
+          <text x="16" y="28" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#17201c">Thông tin ứng dụng</text>
+          <text x="338" y="28" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#6f7a75">›</text>
+          <line x1="16" y1="44" x2="338" y2="44" stroke="#e5e9e6"/>
+
+          <text x="16" y="72" font-family="Inter, sans-serif" font-size="12" font-weight="600" fill="#17201c">Đặt lại dữ liệu mẫu</text>
+          <text x="338" y="72" text-anchor="end" font-family="Inter, sans-serif" font-size="14" fill="#6f7a75">›</text>
+        </g>
+      </g>
+
+      
+    <!-- Bottom Nav -->
+    <rect x="1810" y="1731" width="390" height="77" fill="#ffffff"/>
+    <line x1="1810" y1="1731" x2="2200" y2="1731" stroke="#e5e9e6" stroke-width="1"/>
+    
+      <text x="1849" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">⌂</text>
+      <text x="1849" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Hôm nay</text>
+    
+      <text x="1927" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">📖</text>
+      <text x="1927" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Nhật ký</text>
+    
+      <text x="2005" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">📅</text>
+      <text x="2005" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Thực đơn</text>
+    
+      <text x="2083" y="1763" text-anchor="middle" font-size="18" fill="#6f7a75">📊</text>
+      <text x="2083" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="500" fill="#6f7a75">Tiến độ</text>
+    
+      <text x="2161" y="1763" text-anchor="middle" font-size="18" fill="#1d5c45">👤</text>
+      <text x="2161" y="1781" text-anchor="middle" font-family="Inter, sans-serif" font-size="10" font-weight="700" fill="#1d5c45">Cá nhân</text>
+    
+  
+    </g>
+  
+</svg>

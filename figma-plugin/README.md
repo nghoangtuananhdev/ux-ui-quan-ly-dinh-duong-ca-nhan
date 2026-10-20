@@ -52,21 +52,27 @@ Bộ script plugin Figma này được tạo ra để tự động vẽ toàn b�
 
 ---
 
-## 🚀 Hướng Dẫn Sử Dụng (Chỉ Mất 1 Phút)
+## 🚀 Cách Đưa Thiết Kế Vào Figma (Chọn 1 Trong 2 Cách Rất Dễ)
 
-### Cách 1: Chạy qua Figma Plugin (Khuyên Dùng)
-1. Mở **Figma Desktop** hoặc [Figma Web](https://www.figma.com).
-2. Tạo một file Design mới trống (**New design file**).
-3. Nhấp chuột phải vào canvas hoặc vào menu Figma ở góc trái trên cùng ➔ Chọn **Plugins** ➔ **Development** ➔ **Import plugin from manifest...**.
-4. Trỏ tới thư mục dự án và chọn file:
-   `figma-plugin/manifest.json`
-5. Nhấn chuột phải ➔ **Plugins** ➔ **Development** ➔ Chọn **NutriDaily App Design Generator** và ấn **Run**.
-6. Toàn bộ 11 màn hình sẽ được vẽ ra lập tức trên canvas!
+### 🌟 Cách 1: Kéo thả trực tiếp file SVG vào Figma (Dành cho CẢ Figma Web và Figma Desktop - Nhanh nhất)
+1. Mở Figma (trên trình duyệt Web hoặc Desktop).
+2. Tạo một file thiết kế mới (**+ Design file**).
+3. Tìm file **`nutridaily_figma_screens.svg`** trong thư mục `figma-plugin/` trên máy tính của bạn.
+4. **Kéo thả (Drag & Drop)** file `nutridaily_figma_screens.svg` trực tiếp vào giữa trang làm việc của Figma.
+5. Ngay lập tức, toàn bộ 11 màn hình iPhone với đầy đủ màu sắc, chi tiết, chữ, thẻ card và icon vector sẽ xuất hiện và có thể chỉnh sửa 100%!
 
-### Cách 2: Chạy trực tiếp qua Console
-1. Mở file Figma mới.
-2. Mở cửa sổ DevTools Console (`Ctrl + Alt + I` trên Figma Desktop, hoặc `F12` trên trình duyệt web).
-3. Sao chép toàn bộ code trong file [`code.js`](./code.js) và dán vào tab Console, sau đó ấn **Enter**.
+---
+
+### 🌟 Cách 2: Dùng Figma Plugin (Yêu cầu dùng Figma Desktop App)
+> ⚠️ **Lưu ý quan trọng**: Không bấm nút **"Import"** ở ngoài trang chủ/Dashboard của Figma (nút đó chỉ dùng cho file `.fig`).
+> Tính năng import plugin từ manifest chỉ hoạt động khi bạn **đã mở một file thiết kế** trên phần mềm **Figma Desktop** (ứng dụng cài trên máy tính).
+
+1. Mở phần mềm **Figma Desktop**.
+2. Nhấn **+ Design file** để tạo một file trống mới.
+3. Khi file đã mở ra, vào menu Figma ở góc trái trên cùng ➔ **Plugins** ➔ **Development** ➔ **Import plugin from manifest...**.
+4. Chọn file `figma-plugin/manifest.json`.
+5. Nhấp chuột phải vào màn hình ➔ **Plugins** ➔ **Development** ➔ Chọn **NutriDaily App Design Generator** và ấn **Run**.
+6. Tất cả 11 màn hình sẽ được vẽ tự động và nối sẵn tất cả các dây Prototype tương tác!
 
 ---
 
