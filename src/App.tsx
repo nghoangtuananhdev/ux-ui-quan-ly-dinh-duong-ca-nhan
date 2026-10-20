@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 
 type Screen =
   | "welcome"
@@ -130,10 +130,17 @@ export default function App() {
   const [showDelete, setShowDelete] = useState(false);
   const [selectedGoal, setSelectedGoal] = useState("Ăn uống cân bằng");
 
+  const phoneContentRef = useRef<HTMLDivElement>(null);
+
   const total = useMemo(() => meals.reduce((sum, m) => sum + m.kcal, 0), [meals]);
   const filteredFoods = foods.filter(food => food.name.toLocaleLowerCase("vi").normalize("NFD").replace(/[\u0300-\u036f]/g, "").includes(query.toLocaleLowerCase("vi").normalize("NFD").replace(/[\u0300-\u036f]/g, "")));
   const showToast = (text: string) => { setToast(text); window.setTimeout(() => setToast(""), 2600); };
-  const go = (s: Screen) => { setScreen(s); window.scrollTo(0, 0); };
+  const go = (s: Screen) => {
+    setScreen(s);
+    if (phoneContentRef.current) {
+      phoneContentRef.current.scrollTop = 0;
+    }
+  };
 
   const addFood = () => {
     const kcal = Math.round(selectedFood.kcal * grams / 100);
@@ -157,7 +164,7 @@ export default function App() {
     go("food");
   };
 
-  const commonShell = (content: React.ReactNode, navScreen: Screen = screen) => <div className="phone-shell"><div className="status-bar"><span>9:41</span><span className="status-icons">● ◒</span></div><div className="phone-content">{content}</div>{navItems.some(n => n.key === navScreen) && <BottomNav screen={navScreen} go={go}/>} {toast && <Toast text={toast}/>}</div>;
+  const commonShell = (content: React.ReactNode, navScreen: Screen = screen) => <div className="phone-shell"><div className="status-bar"><span>9:41</span><span className="status-icons">● ◒</span></div><div className="phone-content" ref={phoneContentRef}>{content}</div>{navItems.some(n => n.key === navScreen) && <BottomNav screen={navScreen} go={go}/>} {toast && <Toast text={toast}/>}</div>;
 
   const welcome = <div className="welcome">
     <div className="welcome-art"><div className="sun"></div><div className="plate"><span className="leaf-one"></span><span className="leaf-two"></span><span className="grain"></span></div><div className="spark s1"></div><div className="spark s2"></div></div>
