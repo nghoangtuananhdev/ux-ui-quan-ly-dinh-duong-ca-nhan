@@ -1,0 +1,10 @@
+{
+  "description": "This app helps busy individuals manage their nutrition by tracking meals, calories, and hydration, while providing personalized meal planning features.",
+  "robots": {
+    "index": false
+  },
+  "accessibility": {
+    "addBypassLinks": false,
+    "ignoreReducedMotion": false
+  }
+}
