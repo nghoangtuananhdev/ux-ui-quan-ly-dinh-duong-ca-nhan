@@ -1,0 +1,9 @@
+{
+  "name": "NutriDaily App Design Generator",
+  "id": "nutridaily-app-design-generator",
+  "api": "1.0.0",
+  "main": "code.js",
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": ["figma"]
+}
