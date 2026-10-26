@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build --mode prototype",
+    "build:prototype": "vite build --mode prototype",
+    "build:app": "vite build --mode app",
     "preview": "vite preview",
     "format": "oxfmt"
   },
