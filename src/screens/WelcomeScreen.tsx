@@ -39,9 +39,9 @@ export default function WelcomeScreen({
       </div>
 
       <div className="welcome-actions">
-        <Button onClick={onStart}>Bắt đầu</Button>
+        <Button onClick={onStart}>Tạo tài khoản</Button>
         <Button variant="secondary" onClick={onExplore}>
-          Khám phá bản mẫu
+          Tôi đã có tài khoản
         </Button>
       </div>
     </div>

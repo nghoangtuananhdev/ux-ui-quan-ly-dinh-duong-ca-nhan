@@ -55,7 +55,7 @@ export default function MealSection({
               {totalKcal > 0 ? `${totalKcal.toLocaleString("vi-VN")} kcal` : ""}
             </span>
           </div>
-          <p className="text-caption text-ink-muted truncate m-0">
+          <p className="text-caption text-ink-muted leading-snug m-0">
             {dishSummary}
           </p>
         </div>

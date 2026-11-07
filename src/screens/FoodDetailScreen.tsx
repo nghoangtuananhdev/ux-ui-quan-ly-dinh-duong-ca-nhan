@@ -3,39 +3,44 @@ import Header from "../components/layout/Header";
 import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import Modal from "../components/ui/Modal";
-import { Food, MealLabel } from "../data/foods";
+import PortionPicker from "../components/nutrition/PortionPicker";
+import { ExplainTopic } from "../components/nutrition/ExplainSheet";
+import { Food, MEALS, MealLabel, nutritionFor, portionLabel, mealPhrase } from "../data/foods";
+import { formatPrice } from "../lib/date";
 
 export interface FoodDetailScreenProps {
   food: Food;
   initialGrams?: number;
   initialMeal?: MealLabel;
   isEditing?: boolean;
+  isFavorite: boolean;
+  onToggleFavorite: () => void;
   onBack: () => void;
   onSave: (grams: number, meal: MealLabel) => void;
   onDelete?: () => void;
+  onEditCustom?: () => void;
+  onExplain: (topic: ExplainTopic) => void;
 }
 
 export default function FoodDetailScreen({
   food,
-  initialGrams = 150,
+  initialGrams,
   initialMeal = "Trưa",
   isEditing = false,
+  isFavorite,
+  onToggleFavorite,
   onBack,
   onSave,
   onDelete,
+  onEditCustom,
+  onExplain,
 }: FoodDetailScreenProps) {
-  const [grams, setGrams] = useState(initialGrams);
+  const [grams, setGrams] = useState(initialGrams ?? food.servingGrams);
   const [selectedMeal, setSelectedMeal] = useState<MealLabel>(initialMeal);
   const [showDeleteModal, setShowDeleteModal] = useState(false);
 
-  const calculatedKcal = Math.round((food.kcal * grams) / 100);
-  const calculatedProtein = ((food.protein * grams) / 100).toFixed(1);
-  const calculatedCarbs = ((food.carbs * grams) / 100).toFixed(1);
-  const calculatedFat = ((food.fat * grams) / 100).toFixed(1);
-
+  const n = nutritionFor(food, grams);
   const isValid = grams > 0 && grams <= 2000;
-
-  const mealOptions: MealLabel[] = ["Sáng", "Trưa", "Tối", "Bữa phụ"];
 
   return (
     <>
@@ -43,21 +48,36 @@ export default function FoodDetailScreen({
         title={isEditing ? "Chỉnh sửa món" : "Chi tiết món"}
         back={onBack}
         action={
-          isEditing ? (
+          <>
             <button
               type="button"
-              className="icon-btn danger-icon text-danger"
-              onClick={() => setShowDeleteModal(true)}
-              aria-label="Xóa món ăn này"
+              className={`icon-btn ${isFavorite ? "text-accent-700" : "text-ink-muted"}`}
+              onClick={onToggleFavorite}
+              aria-pressed={isFavorite}
+              aria-label={isFavorite ? "Bỏ khỏi món yêu thích" : "Lưu vào món yêu thích"}
             >
-              <Icon name="trash" size={20} />
+              <Icon name="star" size={20} filled={isFavorite} />
             </button>
-          ) : undefined
+            {food.kind === "custom" && onEditCustom && (
+              <button type="button" className="icon-btn text-ink-muted" onClick={onEditCustom} aria-label="Sửa món tự đặt này">
+                <Icon name="edit" size={20} />
+              </button>
+            )}
+            {isEditing && (
+              <button
+                type="button"
+                className="icon-btn danger-icon text-danger"
+                onClick={() => setShowDeleteModal(true)}
+                aria-label="Xóa món ăn này"
+              >
+                <Icon name="trash" size={20} />
+              </button>
+            )}
+          </>
         }
       />
 
       <main className="screen pad food-detail">
-        {/* Food Hero */}
         <div className="food-hero">
           <span>
             <Icon name="leaf" size={32} />
@@ -67,83 +87,54 @@ export default function FoodDetailScreen({
         <div className="food-title">
           <div>
             <h1>{food.name}</h1>
-            <p>Khẩu phần chuẩn: {food.portion}</p>
+            <p>
+              {portionLabel(food, grams)} · ≈ {formatPrice(n.price)}
+            </p>
           </div>
           <strong>
-            {calculatedKcal}
+            {n.kcal}
             <small> kcal</small>
           </strong>
         </div>
 
-        {/* Macro Grid */}
+        <button
+          type="button"
+          onClick={() => onExplain("estimate")}
+          className="mb-3 inline-flex min-h-[32px] items-center gap-1.5 rounded-full bg-accent-100 px-3 text-caption font-bold text-accent-700 cursor-pointer"
+        >
+          <Icon name="info" size={14} />
+          Số liệu ước tính · vì sao?
+        </button>
+
         <div className="macro-grid">
-          <div>
-            <span className="text-protein font-semibold">Đạm</span>
-            <b>{calculatedProtein} g</b>
-          </div>
-          <div>
-            <span className="text-carbs font-semibold">Tinh bột</span>
-            <b>{calculatedCarbs} g</b>
-          </div>
-          <div>
-            <span className="text-fat font-semibold">Chất béo</span>
-            <b>{calculatedFat} g</b>
-          </div>
+          {(
+            [
+              ["protein", "Đạm", n.protein, "text-protein-text"],
+              ["carbs", "Tinh bột", n.carbs, "text-carbs-text"],
+              ["fat", "Chất béo", n.fat, "text-fat-text"],
+            ] as const
+          ).map(([topic, label, value, color]) => (
+            <button key={topic} type="button" onClick={() => onExplain(topic)} className="cursor-pointer text-left" aria-label={`${label} ${value} gam, xem giải thích`}>
+              <span className={`${color} font-semibold`}>{label}</span>
+              <b>{value} g</b>
+            </button>
+          ))}
         </div>
 
-        {/* Portion Stepper */}
         <div className="detail-section">
           <label className="text-label font-bold text-ink">Khẩu phần</label>
-          <div className="stepper">
-            <button
-              type="button"
-              onClick={() => setGrams((g) => Math.max(10, g - 10))}
-              aria-label="Giảm 10 gram"
-            >
-              −
-            </button>
-            <div>
-              <input
-                type="number"
-                inputMode="numeric"
-                value={grams || ""}
-                onChange={(e) => setGrams(Math.max(0, Number(e.target.value)))}
-                aria-label="Số gram"
-              />
-              <span>gram</span>
-            </div>
-            <button
-              type="button"
-              onClick={() => setGrams((g) => g + 10)}
-              aria-label="Tăng 10 gram"
-            >
-              +
-            </button>
-          </div>
-
-          <div className="quick-portions">
-            {[100, 150, 200].map((n) => (
-              <button
-                key={n}
-                type="button"
-                className={grams === n ? "active" : ""}
-                onClick={() => setGrams(n)}
-              >
-                {n} g
-              </button>
-            ))}
-          </div>
+          <PortionPicker food={food} grams={grams} onChange={setGrams} />
+          {!isValid && (
+            <p className="m-0 text-caption text-danger" role="alert">
+              Khẩu phần cần từ 1 đến 2.000 g.
+            </p>
+          )}
         </div>
 
-        {/* Meal selection */}
         <div className="detail-section">
           <label className="text-label font-bold text-ink">Ghi vào bữa</label>
-          <div
-            className="grid grid-cols-4 gap-2"
-            role="radiogroup"
-            aria-label="Chọn bữa ăn"
-          >
-            {mealOptions.map((m) => {
+          <div className="grid grid-cols-4 gap-2" role="radiogroup" aria-label="Chọn bữa ăn">
+            {MEALS.map((m) => {
               const isSelected = selectedMeal === m;
               return (
                 <button
@@ -152,10 +143,8 @@ export default function FoodDetailScreen({
                   role="radio"
                   aria-checked={isSelected}
                   onClick={() => setSelectedMeal(m)}
-                  className={`min-h-[44px] rounded-md font-bold text-body border transition-colors cursor-pointer select-none ${
-                    isSelected
-                      ? "bg-brand-900 text-white border-brand-900 shadow-xs"
-                      : "bg-surface text-ink border-line hover:bg-brand-50"
+                  className={`min-h-[44px] rounded-md font-bold text-label border transition-colors cursor-pointer select-none ${
+                    isSelected ? "bg-brand-900 text-white border-brand-900 shadow-xs" : "bg-surface text-ink border-line hover:bg-brand-50"
                   }`}
                 >
                   {m}
@@ -165,38 +154,23 @@ export default function FoodDetailScreen({
           </div>
         </div>
 
-        <div className="calc-note">
-          <Icon name="refresh" size={16} />
-          <span>Số liệu được tính theo khẩu phần {grams} g.</span>
-        </div>
-
-        {/* Sticky Actions */}
         <div className="space-y-2 mt-4">
-          <Button
-            disabled={!isValid}
-            onClick={() => onSave(grams, selectedMeal)}
-          >
-            {isEditing ? "Lưu thay đổi" : `Thêm vào bữa ${selectedMeal}`} · {calculatedKcal} kcal
+          <Button disabled={!isValid} onClick={() => onSave(grams, selectedMeal)}>
+            {isEditing ? "Lưu thay đổi" : `Thêm vào ${mealPhrase(selectedMeal)}`} · {n.kcal} kcal
           </Button>
-
           <Button variant="ghost" onClick={onBack}>
             Hủy
           </Button>
         </div>
       </main>
 
-      {/* Delete Confirmation Modal */}
-      <Modal
-        isOpen={showDeleteModal}
-        onClose={() => setShowDeleteModal(false)}
-        title="Xóa món đã ghi?"
-      >
+      <Modal isOpen={showDeleteModal} onClose={() => setShowDeleteModal(false)} title="Xóa món đã ghi?">
         <div className="space-y-4">
           <span className="danger-round">
             <Icon name="trash" size={24} />
           </span>
           <p className="text-body text-ink-muted">
-            {food.name} sẽ bị xóa khỏi nhật ký và tổng năng lượng hôm nay.
+            {food.name} sẽ bị xóa khỏi nhật ký và tổng năng lượng của ngày. Bạn vẫn có thể hoàn tác ngay sau đó.
           </p>
           <div className="space-y-2">
             <Button
@@ -208,10 +182,7 @@ export default function FoodDetailScreen({
             >
               Xóa món
             </Button>
-            <Button
-              variant="secondary"
-              onClick={() => setShowDeleteModal(false)}
-            >
+            <Button variant="secondary" onClick={() => setShowDeleteModal(false)}>
               Giữ lại
             </Button>
           </div>

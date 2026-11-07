@@ -43,7 +43,7 @@ export default function Field({
           className="w-full bg-transparent font-bold text-body text-ink outline-none"
           {...rest}
         />
-        {unit && <span className="text-label text-ink-muted ml-2 select-none">{unit}</span>}
+        {unit && <span className="shrink-0 whitespace-nowrap text-label text-ink-muted ml-2 select-none">{unit}</span>}
       </div>
 
       {error && (

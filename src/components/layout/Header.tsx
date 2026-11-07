@@ -1,6 +1,7 @@
 import React from "react";
 import Icon from "../ui/Icon";
 import ThemeToggle from "./ThemeToggle";
+import { initials, useSession } from "../../lib/auth";
 
 export interface HeaderProps {
   title: string;
@@ -21,6 +22,7 @@ export function Logo({ light = false }: { light?: boolean }) {
 }
 
 export default function Header({ title, back, action, onAvatarClick }: HeaderProps) {
+  const session = useSession();
   return (
     <header className="app-header">
       {back ? (
@@ -48,9 +50,9 @@ export default function Header({ title, back, action, onAvatarClick }: HeaderPro
             type="button"
             className="avatar"
             onClick={onAvatarClick}
-            aria-label="Trang cá nhân của An"
+            aria-label={`Trang cá nhân của ${session?.name ?? "bạn"}`}
           >
-            AN
+            {initials(session?.name ?? "")}
           </button>
         )}
       </div>

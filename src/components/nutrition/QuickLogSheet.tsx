@@ -1,7 +1,7 @@
 import React from "react";
 import Sheet from "../ui/Sheet";
 import Icon from "../ui/Icon";
-import { Food } from "../../data/foods";
+import { Food, MealLabel, nutritionFor, portionLabel, mealPhrase } from "../../data/foods";
 
 export interface QuickLogSheetProps {
   isOpen: boolean;
@@ -12,6 +12,7 @@ export interface QuickLogSheetProps {
   recentFoods: Food[];
   onQuickLogFood: (food: Food) => void;
   triggerRef?: React.RefObject<HTMLElement | null>;
+  meal: MealLabel;
 }
 
 export default function QuickLogSheet({
@@ -23,6 +24,7 @@ export default function QuickLogSheet({
   recentFoods,
   onQuickLogFood,
   triggerRef,
+  meal,
 }: QuickLogSheetProps) {
   return (
     <Sheet
@@ -46,7 +48,7 @@ export default function QuickLogSheet({
             </span>
             <div>
               <b className="block text-body font-bold text-ink">Thêm món ăn</b>
-              <span className="text-caption text-ink-muted">Tìm kiếm hoặc chọn từ thực đơn</span>
+              <span className="text-caption text-ink-muted">Tìm món, chọn khẩu phần Nhỏ/Vừa/Lớn</span>
             </div>
           </div>
           <Icon name="chevron" size={18} className="text-ink-muted" />
@@ -65,7 +67,7 @@ export default function QuickLogSheet({
               <Icon name="water" size={20} />
             </span>
             <div>
-              <b className="block text-body font-bold text-water">Thêm nước uống (+250 ml)</b>
+              <b className="block text-body font-bold text-water">Thêm nước uống</b>
               <span className="text-caption text-ink-muted">Ghi nhận 1 cốc nước vừa uống</span>
             </div>
           </div>
@@ -96,7 +98,7 @@ export default function QuickLogSheet({
       {recentFoods.length > 0 && (
         <div>
           <div className="flex items-center justify-between mb-2 px-1">
-            <b className="text-label font-bold text-ink">Món ăn gần đây</b>
+            <b className="text-label font-bold text-ink">Món gần đây → {mealPhrase(meal)}</b>
             <span className="text-caption text-ink-muted">1 chạm để ghi</span>
           </div>
           <div className="divide-y divide-line rounded-lg border border-line bg-surface overflow-hidden">
@@ -110,11 +112,11 @@ export default function QuickLogSheet({
                     <Icon name="leaf" size={16} />
                   </span>
                   <div className="min-w-0">
-                    <b className="block text-body font-bold text-ink truncate">
+                    <b className="block text-body font-bold text-ink leading-snug break-words">
                       {food.name}
                     </b>
                     <span className="text-caption text-ink-muted">
-                      {food.portion} · {food.kcal} kcal
+                      {portionLabel(food, food.servingGrams)} · {nutritionFor(food, food.servingGrams).kcal} kcal
                     </span>
                   </div>
                 </div>
@@ -126,7 +128,7 @@ export default function QuickLogSheet({
                     onClose();
                   }}
                   className="size-11 shrink-0 flex items-center justify-center rounded-md bg-brand-100 text-brand-text hover:bg-brand-800 hover:text-white transition-colors cursor-pointer"
-                  aria-label={`Thêm nhanh ${food.name}`}
+                  aria-label={`Ghi ngay ${food.name} vào ${mealPhrase(meal)}`}
                 >
                   <Icon name="plus" size={18} />
                 </button>

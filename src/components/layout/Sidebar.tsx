@@ -2,6 +2,7 @@ import React from "react";
 import Icon, { IconName } from "../ui/Icon";
 import { Logo } from "./Header";
 import Button from "../ui/Button";
+import { initials, useSession } from "../../lib/auth";
 
 export interface SidebarProps {
   currentScreen: string;
@@ -14,6 +15,7 @@ export default function Sidebar({
   onNavigate,
   onOpenQuickLog,
 }: SidebarProps) {
+  const session = useSession();
   const navItems: { key: string; label: string; icon: IconName }[] = [
     { key: "today", label: "Hôm nay", icon: "home" },
     { key: "diary", label: "Nhật ký", icon: "book" },
@@ -66,10 +68,10 @@ export default function Sidebar({
 
       <div className="border-t border-line pt-4 px-1">
         <div className="flex items-center gap-3">
-          <span className="avatar">AN</span>
+          <span className="avatar">{initials(session?.name ?? "")}</span>
           <div className="min-w-0">
-            <b className="block text-body font-bold text-ink truncate">An Nguyễn</b>
-            <span className="text-caption text-ink-muted">Tài khoản dùng thử</span>
+            <b className="block text-body font-bold text-ink leading-snug break-words">{session?.name}</b>
+            <span className="text-caption text-ink-muted">Hồ sơ cá nhân</span>
           </div>
         </div>
       </div>

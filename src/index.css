@@ -14,7 +14,7 @@
 
   /* Accent (energy / kcal) */
   --color-accent-500: #ed9c52;  /* graphic on brand-900 (4.76:1) */
-  --color-accent-700: #b4621f;  /* text on light (4.46:1 — >= 14px bold) */
+  --color-accent-700: #9a5217;  /* text on light: ~5.8:1 on white (was #b4621f = 4.46:1) */
   --color-accent-100: #fdeedd;
 
   /* Neutrals */
@@ -196,14 +196,23 @@ body {
 .prototype-stage {
   min-height: 100vh;
   display: grid;
-  grid-template-columns: 260px 390px;
+  grid-template-columns: 390px;
   align-items: center;
   justify-content: center;
   gap: 64px;
   padding: 40px;
   background: radial-gradient(circle at 72% 12%, #f0c28d 0, transparent 25%), linear-gradient(135deg, #12372b 0%, #1f5e49 48%, #dfe9e4 48%);
 }
-.stage-note { color: white; align-self: center; }
+.stage-note {
+  color: white;
+  align-self: center;
+  background: rgb(18 55 43 / 0.88);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow: 0 20px 50px rgb(5 28 21 / 0.3);
+  backdrop-filter: blur(8px);
+}
 .stage-note .logo { margin-bottom: 28px; }
 .stage-note p { opacity: 0.8; margin: 0 0 28px; font-size: 14px; }
 .stage-note > button {
@@ -273,7 +282,7 @@ body {
   border-bottom: 1px solid color-mix(in srgb, var(--color-line) 80%, transparent);
 }
 .app-header > strong { font-family: var(--font-display); font-size: 16px; text-align: center; }
-.app-header > div:last-child { justify-self: end; }
+.app-header > div:last-child { justify-self: end; grid-column: 3; }
 .icon-btn {
   width: 44px;
   height: 44px;
@@ -303,9 +312,12 @@ body {
 .pad { padding: 16px 16px 32px; }
 .with-nav { padding-bottom: 108px; }
 h1, h2, h3 { font-family: var(--font-display); }
-.screen h1 { font-size: 24px; line-height: 1.2; letter-spacing: -0.6px; margin: 6px 0 6px; }
-.screen h2 { font-size: 18px; line-height: 1.3; margin: 0; letter-spacing: -0.2px; }
-.muted { color: var(--color-ink-muted); font-size: 14px; line-height: 1.5; margin: 0; }
+/* Đặt trong layer base để class tiện ích (mt-*, mb-*, text-*) trên tiêu đề vẫn có hiệu lực */
+@layer base {
+  .screen h1 { font-size: 24px; line-height: 1.2; letter-spacing: -0.6px; margin: 6px 0 6px; }
+  .screen h2 { font-size: 18px; line-height: 1.3; margin: 0; letter-spacing: -0.2px; }
+  .muted { color: var(--color-ink-muted); font-size: 14px; line-height: 1.5; margin: 0; }
+}
 .eyebrow, .step-label {
   font-size: 12px;
   font-weight: 700;
@@ -526,7 +538,7 @@ h1, h2, h3 { font-family: var(--font-display); }
 .card-top > div { display: grid; gap: 3px; }
 .card-top span { color: rgba(255, 255, 255, 0.75); font-size: 13px; }
 .card-top strong { font-size: 15px; font-weight: 700; }
-.card-top button {
+.card-top > button {
   border: 0;
   background: transparent;
   color: #dff0e7;
@@ -611,7 +623,7 @@ h1, h2, h3 { font-family: var(--font-display); }
 }
 .meal-row > span:nth-child(2) { display: grid; gap: 2px; min-width: 0; }
 .meal-row b { font-size: 15px; }
-.meal-row small { font-size: 12px; color: var(--color-ink-muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.meal-row small { font-size: 12px; color: var(--color-ink-muted); }
 .meal-row em { font-style: normal; font-size: 13px; font-weight: 600; color: var(--color-ink-muted); }
 
 .water-card {
@@ -837,7 +849,7 @@ h1, h2, h3 { font-family: var(--font-display); }
   color: white;
   border-color: var(--color-brand-900);
 }
-.search-title { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+.search-title { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 2px 12px; margin-bottom: 10px; }
 .search-title b { font-family: var(--font-display); font-size: 16px; }
 .search-title span { font-size: 12px; color: var(--color-ink-muted); }
 
@@ -941,8 +953,8 @@ h1, h2, h3 { font-family: var(--font-display); }
   border-radius: var(--radius-lg);
   padding: 12px;
 }
-.macro-grid div { display: grid; text-align: center; gap: 4px; border-right: 1px solid var(--color-line); }
-.macro-grid div:last-child { border: 0; }
+.macro-grid div, .macro-grid button { display: grid; text-align: center; gap: 4px; border-right: 1px solid var(--color-line); }
+.macro-grid div:last-child, .macro-grid button:last-child { border: 0; }
 .macro-grid span { font-size: 12px; color: var(--color-ink-muted); font-weight: 600; }
 .macro-grid b { font-size: 14px; font-weight: 700; }
 
@@ -1481,3 +1493,10 @@ td { font-size: 12px; color: var(--color-ink-muted); padding: 10px; border: 1px 
   .goal-grid, .facts { grid-template-columns: 1fr; }
   .doc-section { grid-template-columns: 35px 1fr; }
 }
+
+/* Hàng chip cuộn ngang: ẩn thanh cuộn, giữ cuộn mượt */
+.chip-row { scrollbar-width: none; scroll-padding-inline: 16px; }
+.chip-row::-webkit-scrollbar { display: none; }
+
+/* Mở rộng vùng chạm cho nút nhỏ (≥ 44px) mà không đổi kích thước hiển thị */
+.hit-area::before { content: ""; position: absolute; inset: -12px -6px; }

@@ -1,5 +1,7 @@
 {
-  "description": "This app helps busy individuals manage their nutrition by tracking meals, calories, and hydration, while providing personalized meal planning features.",
+  "title": "NutriDaily – Prototype Nhóm 04",
+  "language": "vi",
+  "description": "NutriDaily giúp sinh viên ghi bữa ăn món Việt trong vài chạm, hiểu dinh dưỡng không áp lực và lên thực đơn theo ngân sách.",
   "robots": {
     "index": false
   },

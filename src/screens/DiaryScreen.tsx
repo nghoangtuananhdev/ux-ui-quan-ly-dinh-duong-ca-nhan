@@ -4,14 +4,18 @@ import Icon from "../components/ui/Icon";
 import Button from "../components/ui/Button";
 import FoodRow from "../components/nutrition/FoodRow";
 import MacroBar from "../components/nutrition/MacroBar";
-import { LogEntry, MealLabel, TODAY } from "../data/foods";
+import { LogEntry, MEALS, MealLabel, TODAY } from "../data/foods";
 import { Goals } from "../state/useNutritionStore";
+import { addDays, longLabel } from "../lib/date";
+import { useClock } from "../lib/clock";
+
+const FIRST_DAY = "2025-06-16";
 
 export interface DiaryScreenProps {
   meals: LogEntry[];
   goals: Goals;
   onNavigate: (screen: string) => void;
-  onAddFood: (meal: MealLabel) => void;
+  onAddFood: (meal: MealLabel, date: string) => void;
   onEditMeal: (id: number) => void;
 }
 
@@ -23,6 +27,9 @@ export default function DiaryScreen({
   onEditMeal,
 }: DiaryScreenProps) {
   const [selectedDate, setSelectedDate] = useState(TODAY);
+  const { meal: nowMeal } = useClock();
+  const defaultMeal: MealLabel = selectedDate === TODAY ? nowMeal : "Trưa";
+  const dayTitle = selectedDate === TODAY ? "Hôm nay" : selectedDate === addDays(TODAY, -1) ? "Hôm qua" : longLabel(selectedDate).split(",")[0];
 
   const dayMeals = meals.filter((m) => m.date === selectedDate);
   const totalKcal = dayMeals.reduce((sum, m) => sum + m.kcal, 0);
@@ -36,7 +43,7 @@ export default function DiaryScreen({
     dayMeals.reduce((sum, m) => sum + (m.fat || 0), 0).toFixed(1)
   );
 
-  const mealLabels: MealLabel[] = ["Sáng", "Trưa", "Tối", "Bữa phụ"];
+  const mealLabels = MEALS;
 
   return (
     <>
@@ -46,7 +53,7 @@ export default function DiaryScreen({
           <button
             type="button"
             className="icon-btn"
-            onClick={() => onAddFood("Trưa")}
+            onClick={() => onAddFood(defaultMeal, selectedDate)}
             aria-label="Thêm món ăn"
           >
             <Icon name="plus" size={22} />
@@ -60,21 +67,21 @@ export default function DiaryScreen({
         <div className="date-picker mb-4">
           <button
             type="button"
-            onClick={() => setSelectedDate("2025-06-18")}
+            disabled={selectedDate <= FIRST_DAY}
+            onClick={() => setSelectedDate((d) => addDays(d, -1))}
             aria-label="Ngày trước"
+            className="disabled:opacity-30 disabled:cursor-not-allowed"
           >
             <Icon name="arrow" size={18} />
           </button>
           <div>
-            <b>{selectedDate === TODAY ? "Hôm nay" : "Hôm qua"}</b>
-            <span>
-              {selectedDate === TODAY ? "Thứ Năm, 19/06" : "Thứ Tư, 18/06"}
-            </span>
+            <b>{dayTitle}</b>
+            <span>{longLabel(selectedDate)}</span>
           </div>
           <button
             type="button"
             disabled={selectedDate === TODAY}
-            onClick={() => setSelectedDate(TODAY)}
+            onClick={() => setSelectedDate((d) => addDays(d, 1))}
             aria-label="Ngày sau"
             className="disabled:opacity-30 disabled:cursor-not-allowed"
           >
@@ -156,7 +163,7 @@ export default function DiaryScreen({
                   <button
                     type="button"
                     className="empty-meal"
-                    onClick={() => onAddFood(name)}
+                    onClick={() => onAddFood(name, selectedDate)}
                   >
                     <Icon name="plus" size={16} />
                     <span>Ghi món đầu tiên</span>
@@ -169,7 +176,7 @@ export default function DiaryScreen({
 
         <Button
           icon="plus"
-          onClick={() => onAddFood("Trưa")}
+          onClick={() => onAddFood(defaultMeal, selectedDate)}
         >
           Thêm món
         </Button>

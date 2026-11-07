@@ -56,7 +56,7 @@ export default function MacroBar({
       aria-label={`${label}: ${value}g trên mục tiêu ${total}g`}
       className="w-full space-y-1.5"
     >
-      <div className="flex items-center justify-between text-label">
+      <div className="flex items-center justify-between gap-2 text-label whitespace-nowrap">
         <span
           className={`flex items-center gap-1.5 font-medium ${
             onDark ? "text-white/80" : "text-ink"

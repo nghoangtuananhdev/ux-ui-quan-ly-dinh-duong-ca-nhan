@@ -69,7 +69,7 @@ export function ToastProvider({ children }: { children: React.ReactNode }) {
             >
               <Icon name="check" size={14} />
             </span>
-            <span className="text-body font-medium truncate">{toast.text}</span>
+            <span className="text-body font-medium leading-snug break-words">{toast.text}</span>
           </div>
 
           {toast.actionLabel && toast.onAction && (

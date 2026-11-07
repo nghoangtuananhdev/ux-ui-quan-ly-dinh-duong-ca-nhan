@@ -26,9 +26,45 @@ export type IconName =
   | "utensils"
   | "apple"
   | "sparkle"
-  | "undo";
+  | "undo"
+  | "bell"
+  | "shield"
+  | "star"
+  | "wallet"
+  | "info"
+  | "sliders";
 
 const paths: Record<IconName, React.ReactNode> = {
+  bell: (
+    <>
+      <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9" />
+      <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0" />
+    </>
+  ),
+  shield: (
+    <>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+      <path d="m9 12 2 2 4-4" />
+    </>
+  ),
+  star: <path d="m12 3 2.8 5.7 6.2.9-4.5 4.4 1 6.2L12 17.3 6.5 20.2l1-6.2L3 9.6l6.2-.9L12 3Z" />,
+  wallet: (
+    <>
+      <path d="M19 7V5a2 2 0 0 0-2-2H5a2 2 0 0 0 0 4h14a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5" />
+      <path d="M17 14h.01" />
+    </>
+  ),
+  info: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path d="M12 16v-5M12 8h.01" />
+    </>
+  ),
+  sliders: (
+    <>
+      <path d="M4 21v-7M4 10V3M12 21v-9M12 8V3M20 21v-5M20 12V3M1 14h6M9 8h6M17 16h6" />
+    </>
+  ),
   leaf: (
     <>
       <path d="M19 3C12 3 6 7 6 13c0 2 1 4 3 5 6 2 10-4 10-15Z" />
@@ -142,11 +178,13 @@ export default function Icon({
   size = 20,
   className = "",
   strokeWidth = 1.8,
+  filled = false,
 }: {
   name: IconName;
   size?: number;
   className?: string;
   strokeWidth?: number;
+  filled?: boolean;
 }) {
   return (
     <svg
@@ -155,7 +193,7 @@ export default function Icon({
       width={size}
       height={size}
       viewBox="0 0 24 24"
-      fill="none"
+      fill={filled ? "currentColor" : "none"}
       stroke="currentColor"
       strokeWidth={strokeWidth}
       strokeLinecap="round"

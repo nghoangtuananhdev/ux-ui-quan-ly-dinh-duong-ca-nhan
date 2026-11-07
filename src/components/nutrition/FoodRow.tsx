@@ -25,13 +25,13 @@ export default function FoodRow({ entry, onClick, onDelete }: FoodRowProps) {
       }}
       className="group w-full min-h-[58px] p-3 rounded-lg border border-line bg-surface hover:border-brand-700/40 flex items-center justify-between gap-3 transition-colors cursor-pointer select-none"
     >
-      <div className="flex items-center gap-3 min-w-0 flex-1">
+      <div className="flex items-start gap-3 min-w-0 flex-1">
         <span className="flex size-10 shrink-0 items-center justify-center rounded-md bg-brand-50 text-brand-text-soft">
           <Icon name="leaf" size={18} />
         </span>
         <div className="min-w-0">
-          <b className="block text-body font-bold text-ink truncate">{entry.name}</b>
-          <span className="block text-caption text-ink-muted truncate">{metaText}</span>
+          <b className="block text-body font-bold text-ink leading-snug break-words">{entry.name}</b>
+          <span className="block text-caption text-ink-muted leading-snug">{metaText}</span>
         </div>
       </div>
 

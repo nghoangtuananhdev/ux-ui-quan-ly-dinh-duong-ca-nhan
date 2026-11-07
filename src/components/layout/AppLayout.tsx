@@ -4,8 +4,9 @@ import Sidebar from "./Sidebar";
 import { Logo } from "./Header";
 import Icon from "../ui/Icon";
 import QuickLogSheet from "../nutrition/QuickLogSheet";
-import { Food } from "../../data/foods";
+import { Food, MealLabel } from "../../data/foods";
 import { isPrototype } from "../../config/mode";
+import { useClock } from "../../lib/clock";
 
 export interface AppLayoutProps {
   currentScreen: string;
@@ -16,7 +17,9 @@ export interface AppLayoutProps {
   onGoPlanner: () => void;
   recentFoods: Food[];
   onQuickLogFood: (food: Food) => void;
+  quickLogMeal: MealLabel;
 }
+
 
 export default function AppLayout({
   currentScreen,
@@ -27,7 +30,9 @@ export default function AppLayout({
   onGoPlanner,
   recentFoods,
   onQuickLogFood,
+  quickLogMeal,
 }: AppLayoutProps) {
+  const { now } = useClock();
   // Toggle full desktop view vs phone stage
   const [isFullAppView, setIsFullAppView] = useState(!isPrototype);
   const [isQuickLogOpen, setIsQuickLogOpen] = useState(false);
@@ -81,6 +86,7 @@ export default function AppLayout({
           onGoPlanner={onGoPlanner}
           recentFoods={recentFoods}
           onQuickLogFood={onQuickLogFood}
+          meal={quickLogMeal}
         />
       </div>
     );
@@ -89,24 +95,9 @@ export default function AppLayout({
   // Prototype Stage mode (Phone Shell)
   return (
     <div className="prototype-stage">
-      <div className="stage-note">
-        <Logo light />
-        <p>Prototype tương tác · NutriDaily</p>
-        <div className="space-y-2">
-          <button
-            type="button"
-            onClick={() => setIsFullAppView(true)}
-            className="w-full flex items-center justify-between"
-          >
-            <span>Xem ứng dụng đầy đủ</span>
-            <Icon name="chevron" size={16} />
-          </button>
-        </div>
-      </div>
-
       <div className="phone-shell">
         <div className="status-bar">
-          <span>9:41</span>
+          <span>{now.toLocaleTimeString("vi-VN", { hour: "2-digit", minute: "2-digit" })}</span>
           <span className="status-icons">● ◒</span>
         </div>
 
@@ -135,6 +126,7 @@ export default function AppLayout({
           recentFoods={recentFoods}
           onQuickLogFood={onQuickLogFood}
           triggerRef={fabRef}
+          meal={quickLogMeal}
         />
       </div>
     </div>

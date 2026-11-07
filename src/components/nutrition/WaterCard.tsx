@@ -6,6 +6,7 @@ export interface WaterCardProps {
   waterGoal: number;
   onAddWater: (ml: number) => void;
   onRemoveWater: (ml: number) => void;
+  onSetWater: (ml: number) => void;
 }
 
 export default function WaterCard({
@@ -13,14 +14,15 @@ export default function WaterCard({
   waterGoal,
   onAddWater,
   onRemoveWater,
+  onSetWater,
 }: WaterCardProps) {
   const safeGoal = Math.max(waterGoal, 1);
   const pct = Math.min((water / safeGoal) * 100, 100);
   const isGoalReached = water >= safeGoal;
 
-  // Render 8 cups (each 250ml up to goal)
-  const totalCups = Math.max(Math.ceil(safeGoal / 250), 8);
-  const filledCups = Math.floor(water / 250);
+  // Mỗi ly 250 ml, ly cuối chỉ tới đúng mục tiêu
+  const totalCups = Math.ceil(safeGoal / 250);
+  const cupTarget = (i: number) => Math.min((i + 1) * 250, safeGoal);
 
   return (
     <section
@@ -49,7 +51,7 @@ export default function WaterCard({
         </div>
 
         {isGoalReached && (
-          <span className="inline-flex items-center gap-1 rounded-full bg-success/15 px-2.5 py-1 text-caption font-bold text-success">
+          <span className="inline-flex shrink-0 items-center gap-1 whitespace-nowrap rounded-full bg-success/15 px-2.5 py-1 text-caption font-bold text-success">
             <Icon name="check" size={14} />
             Đạt mục tiêu
           </span>
@@ -57,21 +59,29 @@ export default function WaterCard({
       </div>
 
       {/* Cups visualization */}
-      <div className="grid grid-cols-8 gap-1.5 py-1">
+      <div className="grid gap-1.5 py-1" style={{ gridTemplateColumns: `repeat(${Math.min(totalCups, 8)}, minmax(0, 1fr))` }}>
         {Array.from({ length: totalCups }).map((_, i) => {
-          const isFilled = i < filledCups;
+          const target = cupTarget(i);
+          const isFilled = water >= target;
+          const prevTarget = i === 0 ? 0 : cupTarget(i - 1);
+          // Chạm ly đang là ly cuối cùng đã đầy → bỏ ly đó
+          const next = water === target ? prevTarget : target;
           return (
-            <div
+            <button
+              type="button"
               key={i}
-              className={`h-9 rounded flex items-center justify-center transition-colors ${
+              onClick={() => onSetWater(next)}
+              aria-pressed={isFilled}
+              aria-label={`${isFilled && water === target ? "Bỏ" : "Đặt"} mức nước ${next.toLocaleString("vi-VN")} ml`}
+              className={`h-11 rounded-md flex items-center justify-center transition-colors cursor-pointer ${
                 isFilled
                   ? "bg-water text-white"
-                  : "border-2 border-water/25 bg-surface/50 text-water/40"
+                  : "border-2 border-water/25 bg-surface/50 text-water/40 hover:bg-water/10"
               }`}
-              title={`${(i + 1) * 250} ml`}
+              title={`${target.toLocaleString("vi-VN")} ml`}
             >
               <Icon name="water" size={16} />
-            </div>
+            </button>
           );
         })}
       </div>
@@ -91,8 +101,9 @@ export default function WaterCard({
         <button
           type="button"
           onClick={() => onAddWater(250)}
+          disabled={isGoalReached}
           aria-label="Thêm 250 ml nước"
-          className="min-h-[44px] flex-1 rounded-md bg-water text-white font-bold hover:bg-water/90 shadow-sm active:scale-[0.98] cursor-pointer transition-all flex items-center justify-center gap-2"
+          className="min-h-[44px] flex-1 rounded-md bg-water text-white font-bold hover:bg-water/90 disabled:opacity-40 disabled:cursor-not-allowed shadow-sm active:scale-[0.98] cursor-pointer transition-all flex items-center justify-center gap-2"
         >
           <Icon name="plus" size={18} />
           +250 ml

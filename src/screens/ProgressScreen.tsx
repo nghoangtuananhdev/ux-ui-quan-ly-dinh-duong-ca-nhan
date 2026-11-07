@@ -2,43 +2,52 @@ import React, { useState } from "react";
 import Header from "../components/layout/Header";
 import Icon from "../components/ui/Icon";
 import MacroBar from "../components/nutrition/MacroBar";
-import { LogEntry, TODAY } from "../data/foods";
+import { TODAY } from "../data/foods";
 import { Goals } from "../state/useNutritionStore";
+import { addDays, shortDate, weekdayShort } from "../lib/date";
 
 export interface ProgressScreenProps {
-  meals: LogEntry[];
-  water: number;
+  dayTotals: (date: string) => { kcal: number; count: number };
+  waterFor: (date: string) => number;
   goals: Goals;
   onNavigate: (screen: string) => void;
 }
 
-export default function ProgressScreen({
-  meals,
-  water,
-  goals,
-  onNavigate,
-}: ProgressScreenProps) {
-  // Weekly data (T2 to CN: 16 to 22 June)
-  const todayMeals = meals.filter((m) => m.date === TODAY);
-  const todayKcal = todayMeals.reduce((sum, m) => sum + m.kcal, 0);
+export const WEEK_START = "2025-06-16"; // Thứ Hai của tuần chứa TODAY
 
-  // Index 3 is Thursday 19th
-  const [selectedDayIndex, setSelectedDayIndex] = useState(3);
+export function weekSummary(dayTotals: ProgressScreenProps["dayTotals"], waterFor: ProgressScreenProps["waterFor"]) {
+  const days = Array.from({ length: 7 }, (_, i) => {
+    const date = addDays(WEEK_START, i);
+    const t = dayTotals(date);
+    return {
+      iso: date,
+      label: weekdayShort(date),
+      date: shortDate(date),
+      kcal: t.kcal,
+      water: waterFor(date),
+      count: t.count,
+      isToday: date === TODAY,
+      isFuture: date > TODAY,
+    };
+  });
+  const loggedDays = days.filter((d) => d.count > 0);
+  const avgKcal = loggedDays.length ? Math.round(loggedDays.reduce((s, d) => s + d.kcal, 0) / loggedDays.length) : 0;
+  const waterDays = days.filter((d) => d.water > 0);
+  const avgWater = waterDays.length ? Math.round(waterDays.reduce((s, d) => s + d.water, 0) / waterDays.length / 50) * 50 : 0;
+  return { days, loggedDays, avgKcal, avgWater, waterDays };
+}
 
-  const days = [
-    { label: "T2", date: "16/06", kcal: 1450, water: 1500, count: 3 },
-    { label: "T3", date: "17/06", kcal: 1820, water: 1750, count: 4 },
-    { label: "T4", date: "18/06", kcal: 0, water: 0, count: 0 },
-    { label: "T5", date: "19/06", kcal: todayKcal, water: water, count: todayMeals.length, isToday: true },
-    { label: "T6", date: "20/06", kcal: 1590, water: 1400, count: 3 },
-    { label: "T7", date: "21/06", kcal: 0, water: 0, count: 0 },
-    { label: "CN", date: "22/06", kcal: 0, water: 0, count: 0 },
-  ];
-
-  const loggedDays = days.filter((d) => d.kcal > 0);
-  const avgKcal = loggedDays.length
-    ? Math.round(loggedDays.reduce((sum, d) => sum + d.kcal, 0) / loggedDays.length)
-    : 0;
+export default function ProgressScreen({ dayTotals, waterFor, goals, onNavigate }: ProgressScreenProps) {
+  const { days, loggedDays, avgKcal, avgWater, waterDays } = weekSummary(dayTotals, waterFor);
+  const pastDays = days.filter((d) => !d.isFuture).length;
+  const [selectedDayIndex, setSelectedDayIndex] = useState(days.findIndex((d) => d.isToday));
+  const diffPct = avgKcal ? Math.round(((avgKcal - goals.kcal) / goals.kcal) * 100) : 0;
+  const summary =
+    loggedDays.length === 0
+      ? "Tuần này bạn chưa ghi ngày nào. Bắt đầu từ bữa tiếp theo là được."
+      : `Tuần này bạn đã ghi ${loggedDays.length}/${pastDays} ngày. Trung bình ${avgKcal.toLocaleString("vi-VN")} kcal/ngày — ${
+          Math.abs(diffPct) <= 10 ? "gần mục tiêu" : diffPct < 0 ? "thấp hơn mục tiêu một chút" : "cao hơn mục tiêu một chút"
+        }.`;
 
   const selectedDay = days[selectedDayIndex];
 
@@ -58,18 +67,11 @@ export default function ProgressScreen({
       />
 
       <main className="screen pad with-nav">
-        {/* Period control */}
-        <div className="period-control mb-4">
-          <button type="button" aria-label="Tuần trước">
-            <Icon name="arrow" size={18} />
-          </button>
-          <div>
-            <b>Tuần này</b>
-            <span>16 – 22 tháng 6</span>
-          </div>
-          <button type="button" aria-label="Tuần sau">
-            <Icon name="chevron" size={18} />
-          </button>
+        <div className="eyebrow">TUẦN NÀY · 16 – 22 THÁNG 6</div>
+        <h1>Tiến độ của bạn</h1>
+        <div className="mt-2 mb-4 flex gap-3 rounded-lg bg-brand-50 p-3.5" role="status">
+          <Icon name="sparkle" size={20} className="shrink-0 text-brand-text-soft" />
+          <p className="m-0 text-label text-brand-text">{summary}</p>
         </div>
 
         {/* Chart Card */}
@@ -96,7 +98,8 @@ export default function ProgressScreen({
                 y1={goalY}
                 x2={chartWidth}
                 y2={goalY}
-                stroke="#b4621f"
+                stroke="currentColor"
+                className="text-accent-700"
                 strokeWidth="1.5"
                 strokeDasharray="4 4"
                 opacity="0.8"
@@ -105,7 +108,7 @@ export default function ProgressScreen({
                 x={chartWidth - 4}
                 y={goalY - 4}
                 textAnchor="end"
-                className="text-[10px] fill-accent-700 font-bold"
+                className="text-[11px] fill-accent-700 font-bold"
               >
                 Mục tiêu {goals.kcal}
               </text>
@@ -115,7 +118,7 @@ export default function ProgressScreen({
                 const colWidth = 24;
                 const spacing = (chartWidth - 7 * colWidth) / 8;
                 const x = spacing + i * (colWidth + spacing);
-                const hasData = d.kcal > 0;
+                const hasData = d.count > 0;
                 const barHeight = hasData
                   ? (d.kcal / maxScaleKcal) * (chartHeight - 30)
                   : 4;
@@ -126,7 +129,14 @@ export default function ProgressScreen({
                   <g
                     key={d.label}
                     onClick={() => setSelectedDayIndex(i)}
-                    className="cursor-pointer"
+                    onKeyDown={(e) => {
+                      if (e.key === "Enter" || e.key === " ") setSelectedDayIndex(i);
+                    }}
+                    role="button"
+                    tabIndex={0}
+                    aria-pressed={isSelected}
+                    aria-label={`${d.label} ${d.date}: ${d.isFuture ? "chưa đến" : d.count ? `${d.kcal} kcal` : "chưa ghi"}`}
+                    className="cursor-pointer outline-none focus-visible:[&>rect:nth-child(2)]:stroke-brand-700 focus-visible:[&>rect:nth-child(2)]:stroke-2"
                   >
                     {/* Background hit area */}
                     <rect
@@ -159,7 +169,7 @@ export default function ProgressScreen({
                       y={chartHeight - 6}
                       textAnchor="middle"
                       className={`text-[11px] font-bold select-none ${
-                        isSelected ? "fill-brand-900" : "fill-ink-muted"
+                        isSelected ? "fill-brand-text" : "fill-ink-muted"
                       }`}
                     >
                       {d.label}
@@ -171,8 +181,7 @@ export default function ProgressScreen({
           </div>
 
           <p className="chart-caption">
-            Bạn đã ghi nhật ký <b>{loggedDays.length}/7 ngày</b>. Những ngày còn
-            lại chưa có dữ liệu.
+            Đã ghi <b>{loggedDays.length} ngày</b>. Ngày chưa ghi chỉ hiện cột xám — không sao cả.
           </p>
         </section>
 
@@ -184,16 +193,19 @@ export default function ProgressScreen({
             </span>
             <div>
               <span>Nước uống trung bình</span>
-              <b>1.550 ml / ngày ghi</b>
+              <b>{avgWater.toLocaleString("vi-VN")} ml / ngày</b>
             </div>
           </div>
-          <small>Dựa trên {loggedDays.length} ngày có dữ liệu</small>
+          <small>{waterDays.length ? `Dựa trên ${waterDays.length} ngày có ghi nước` : "Tuần này chưa ghi nước"} · mục tiêu {goals.waterMl.toLocaleString("vi-VN")} ml</small>
         </section>
 
         {/* Selected Day Detail */}
         <h2 className="section-h2">
           Chi tiết ngày {selectedDay.label} ({selectedDay.date})
         </h2>
+        {selectedDay.isFuture ? (
+          <p className="muted mb-4">Ngày này chưa đến.</p>
+        ) : (
         <div className="stat-list mb-4">
           <div>
             <span>Năng lượng</span>
@@ -208,6 +220,7 @@ export default function ProgressScreen({
             <b>{selectedDay.count} món</b>
           </div>
         </div>
+        )}
       </main>
     </>
   );
